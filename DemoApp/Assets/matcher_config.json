@@ -1,0 +1,138 @@
+{
+    "version": 1,
+    "name": "main",
+    "regexes": {},
+    "fuzzy": {
+        "min_match_score": 0.7,
+        "non_boundary_penalty": 4,
+        "rules": {
+            "DATUM": {
+                "patterns": [
+                    "datum {date_or_time}",
+                    "datum ist {date_or_time}",
+                    "datum der meldung {date_or_time}",
+                    "datum der meldung ist {date_or_time}"
+                ]
+            },
+            "UHRZEIT": {
+                "patterns": [
+                    "uhrzeit {time}",
+                    "uhrzeit ist {time}",
+                    "zeit {time}",
+                    "zeit ist {time}"
+                ]
+            },
+            "KRANKHEIT": {
+                "patterns": [
+                    "krankheit {krankheit}",
+                    "krankheit ist {krankheit}"
+                ]
+            },
+            "SYMPTOME": {
+                "patterns": [
+                    "symptome {symptome: to_next_match}",
+                    "symptome sind {symptome: to_next_match}"
+                ]
+            },
+            "IMPFSTATUS": {
+                "patterns": [
+                    "impfstatus {impfstatus}",
+                    "impfstatus ist {impfstatus}"
+                ]
+            }
+        },
+        "lists": {
+            "krankheit": {
+                "Botulismus": {
+                    "patterns": [
+                        "botulismus"
+                    ]
+                },
+                "Clostridioides difficile": {
+                    "patterns": [
+                        "clostridioides difficile"
+                    ]
+                },
+                "Coronavirus-Krankheit 2019 (COVID-19)": {
+                    "patterns": [
+                        "covid 19",
+                        "covid",
+                        "corona"
+                    ]
+                },
+                "Creutzfeldt-Jakob-Krankheit (CJK)": {
+                    "patterns": [
+                        "creutzfeldt jakob krankheit",
+                        "creutzfeldt jakob",
+                        "c j k",
+                        "v c j k"
+                    ]
+                },
+                "Diphterie": {
+                    "patterns": [
+                        "diphterie"
+                    ]
+                },
+                "Hämorrhagisches Fieber": {
+                    "patterns": [
+                        "hämorrhagisches fieber"
+                    ]
+                },
+                "Hepatitis, aktue virale": {
+                    "patterns": [
+                        "hepatitis",
+                        "akute hepatitis"
+                    ]
+                },
+                "Keuchhusten (Pertussis)": {
+                    "patterns": [
+                        "keuchhusten",
+                        "pertussis"
+                    ]
+                },
+                "Masern": {
+                    "patterns": [
+                        "masern"
+                    ]
+                },
+                "Milzbrand (Anthrax)": {
+                    "patterns": [
+                        "milzbrand",
+                        "anthrax"
+                    ]
+                },
+                "Mumps": {
+                    "patterns": [
+                        "mumps"
+                    ]
+                },
+                "Tollwut": {
+                    "patterns": [
+                        "tollwut"
+                    ]
+                }
+            },
+            "impfstatus": {
+                "geimpft": {
+                    "patterns": [
+                        "geimpft"
+                    ]
+                },
+                "nicht geimpft": {
+                    "patterns": [
+                        "nicht geimpft",
+                        "ungeimpt",
+                        "keine impfung"
+                    ]
+                },
+                "unbekannt": {
+                    "patterns": [
+                        "unbekannt",
+                        "nicht bekannt",
+                        "weiß ich nicht"
+                    ]
+                }
+            }
+        }
+    }
+}

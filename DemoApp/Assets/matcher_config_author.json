@@ -1,0 +1,45 @@
+{
+    "version": 1,
+    "name": "author",
+    "regexes": {
+        "TELEFONNUMMER": {
+            "patterns": [
+                "telefonnummer (?<phone>[0-9 ]{5,})",
+                "telefonnummer ist (?<phone>[0-9 ]{5,})",
+                "telefonnummer ist die (?<phone>[0-9 ]{5,})",
+                "telefon (?<phone>[0-9 ]{5,})",
+                "telefon ist (?<phone>[0-9 ]{5,})",
+                "telefon ist die (?<phone>[0-9 ]{5,})"
+            ]
+        }
+    },
+    "fuzzy": {
+        "min_match_score": 0.7,
+        "non_boundary_penalty": 4,
+        "rules": {
+            "NAME": {
+                "patterns": [
+                    "name {text: to_next_match}",
+                    "name ist {text: to_next_match}"
+                ]
+            },
+            "GEBURTSDATUM": {
+                "patterns": [
+                    "geburtstag {date}",
+                    "geburtstag ist {date}",
+                    "geburtsdatum {date}",
+                    "geburtsdatum ist {date}"
+                ]
+            },
+            "ADRESSE": {
+                "patterns": [
+                    "adresse {text: to_next_match}",
+                    "adresse ist {text: to_next_match}",
+                    "anschrift {text: to_next_match}",
+                    "anschrift ist {text: to_next_match}"
+                ]
+            }
+        },
+        "lists": {}
+    }
+}
