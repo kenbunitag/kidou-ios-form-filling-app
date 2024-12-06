@@ -35,6 +35,7 @@ struct LogsView: View {
     }
 }
 
+
 struct LogsView_Previews: PreviewProvider {
     static var previews: some View {
         LogsView(messageStore: MessageStore.createMock())
