@@ -29,7 +29,6 @@ struct LogsView: View {
                     }
                 }
                 .padding()
-                .animation(.default, value: messageStore.transcriptions)
             }
             .navigationTitle("Transkripte")
         }
