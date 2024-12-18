@@ -37,7 +37,9 @@ struct MainTabview: View {
         .environment(\.locale, .init(identifier: "de_DE"))
         .onAppear {
             if !isPreview() {
-                try! pipeline.startProcessing()
+                DispatchQueue.global(qos: .utility).async {
+                    try! pipeline.startProcessing()
+                }
             }
         }
     }
